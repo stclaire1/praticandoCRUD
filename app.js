@@ -1,5 +1,7 @@
 const http = require('http')
 const express = require('express')
+const { ppid } = require('process')
+const { uuid } = require('uuidv4')
 const app = express()
 const porta = 3001
 
@@ -14,5 +16,8 @@ app.get('/usuarios', (req, res)=>{
         {nome: 'Jéssica', idade: 26}
     ]
     res.send(users)
+
+app.post('/usuarios/:id', (req, res)=>{
+})
 
 }).listen(porta)
